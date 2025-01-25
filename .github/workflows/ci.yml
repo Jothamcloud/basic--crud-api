@@ -18,8 +18,8 @@ jobs:
       - name: Sets Up MySQL
         run: |
           sudo /etc/init.d/mysql start
-          sudo mysql -e 'ALTER USER "${{env.DB_USER}}"@"localhost" IDENTIFIED BY "${{env.DB_PASSWORD}}";' -u root -p root  
-          sudo mysql -e 'CREATE DATABASE ${{env.DB_NAME}};' -u ${{env.DB_USER}} -p ${{env.DB_PASSWORD}} 
+          sudo mysql -e 'ALTER USER "${{env.DB_USER}}"@"localhost" IDENTIFIED BY "${{env.DB_PASSWORD}}";' -uroot -proot 
+          sudo mysql -e 'CREATE DATABASE ${{env.DB_NAME}};' -u${{env.DB_USER}} -p${{env.DB_PASSWORD}} 
 
       - name: Checkout Code
         uses: actions/checkout@v4
